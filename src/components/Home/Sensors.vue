@@ -2,11 +2,11 @@
 
 
     <div class="row">
-        <div class="col-md-4 col-md-offset-2 mycontent-left">
+        <div class="col-sm-12 col-md-4 col-md-offset-1 mycontent-left"  style="margin-top: 50px;">
             <div class="block">
                 <li class="fa fa-thermometer-half fa-9x li-sensor-temp"></li>
                 <div class="block" style="margin-left: 20px;">
-                    <h2 class="text-center">อุณหภูมิ</h2>
+                    <h2 class="text-center" v-lang.temperature></h2>
                     <h1 class="text-center" style="font-weight: bolder;">21 &#8451;</h1>
                 </div>
             </div>
@@ -14,11 +14,11 @@
             <hr class="vertical block">
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6" style="margin-top: 50px;"> 
             <div class="block">
                 <li class="fa fa-braille fa-9x li-sensor-humi"></li>
                 <div class="block" style="margin-left: 20px;">
-                    <h2 class="text-center">ความชื้น</h2>
+                    <h2 class="text-center" v-lang.humidity></h2>
                     <h1 class="text-center" style="font-weight: bolder">59 %</h1>
                 </div>
             </div>

@@ -8,9 +8,9 @@
                         <img src="../../assets/img/ventilation.png" style="width: 20%; height: 20%;">
                     </div>
                     <div class="block" style="margin-left: 20px; width: 60%">
-                        <h2>พัดลม</h2>
-                        <h2>โหมด: Auto</h2>
-                        <h2>สถานะ: ON</h2>
+                        <h2 v-lang.fan></h2>
+                        <h2><span v-lang.mode></span> : Auto</h2>
+                        <h2><span v-lang.status></span>: ON</h2>
                     </div>
             </div>
         </div>
@@ -20,9 +20,9 @@
                         <img src="../../assets/img/drops.png" style="width: 20%; height: 20%;">
                     </div>
                     <div class="block" style="margin-left: 20px; width: 60%">
-                        <h2>ปั้มน้ำ</h2>
-                        <h2>โหมด: Auto</h2>
-                        <h2>สถานะ: ON</h2>
+                        <h2 v-lang.pump></h2>
+                        <h2><span v-lang.mode></span> : Auto</h2>
+                        <h2><span v-lang.status></span>: ON</h2>
                     </div>
             </div>
         </div>
@@ -33,9 +33,9 @@
                         <img src="../../assets/img/light-bulb.png" style="width: 20%; height: 20%;">
                     </div>
                     <div class="block" style="margin-left: 20px; width: 60%">
-                        <h2>ปั้มน้ำ</h2>
-                        <h2>โหมด: Auto</h2>
-                        <h2>สถานะ: ON</h2>
+                       <h2 v-lang.light></h2>
+                        <h2><span v-lang.mode></span> : Auto</h2>
+                        <h2><span v-lang.status></span>: ON</h2>
                     </div>
             </div>
         </div>
