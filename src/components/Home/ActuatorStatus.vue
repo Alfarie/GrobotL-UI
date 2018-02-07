@@ -3,32 +3,32 @@
 
     <div>
         <div class="row" style="margin-top: 50px;">
-            <div class="col-md-10 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                     <div style="display: inline">
                         <img src="../../assets/img/ventilation.png" style="width: 20%; height: 20%;">
                     </div>
                     <div class="block" style="margin-left: 20px; width: 60%">
                         <h2 v-lang.fan></h2>
                         <h2><span v-lang.mode></span> : Auto</h2>
-                        <h2><span v-lang.status></span>: ON</h2>
+                        <h2><span v-lang.status></span> <span>: ON</span></h2>
                     </div>
             </div>
         </div>
         <div class="row" style="margin-top: 50px;">
-            <div class="col-md-10 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                     <div style="display: inline">
                         <img src="../../assets/img/drops.png" style="width: 20%; height: 20%;">
                     </div>
                     <div class="block" style="margin-left: 20px; width: 60%">
                         <h2 v-lang.pump></h2>
-                        <h2><span v-lang.mode></span> : Auto</h2>
-                        <h2><span v-lang.status></span>: ON</h2>
+                        <h2><span v-lang.mode></span> : <span style="color: orange;">Auto</span></h2>
+                        <h2><span v-lang.status></span>: <span style="color: green">ON</span></h2>
                     </div>
             </div>
         </div>
 
         <div class="row" style="margin-top: 50px;">
-            <div class="col-md-10 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                     <div style="display: inline">
                         <img src="../../assets/img/light-bulb.png" style="width: 20%; height: 20%;">
                     </div>
