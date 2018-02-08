@@ -1,15 +1,13 @@
 <template>
     <div class="row">
-        <div class="col-sm-12 col-md-4 col-md-offset-1 mycontent-left"  >
+        <div class="col-sm-12 col-md-4 col-md-offset-2 mycontent-left"  >
             <div class="block">
                 <li class="fa fa-thermometer-half fa-9x li-sensor-temp"></li>
                 <div class="block" style="margin-left: 20px;">
-                    <h2 class="text-center" v-lang.temperature></h2>
-                    <h1 class="text-center li-sensor-temp" style="font-size: 50px;"> 21.0 C</h1>
+                    <h2 class="" v-lang.temperature></h2>
+                    <h1 class=" li-sensor-temp" style="font-size: 55px;"> 21.0 C</h1>
                 </div>
             </div>
-
-            <hr class="vertical block">
         </div>
 
         <div class="col-md-6" > 
@@ -17,7 +15,7 @@
                 <li class="fa fa-braille fa-9x li-sensor-humi"></li>
                 <div class="block" style="margin-left: 20px;">
                     <h2 class="text-center" v-lang.humidity></h2>
-                    <h1 class="text-center li-sensor-humi" style="font-size: 50px;">59 %</h1>
+                    <h1 class="text-center li-sensor-humi" style="font-size: 55px;">59 %</h1>
                 </div>
             </div>
             <hr class="vertical block">

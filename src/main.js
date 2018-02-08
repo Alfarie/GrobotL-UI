@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import MultiLanguage from 'vue-multilanguage'
 
-import {routes} from './router.js'
+import {routes} from './routes.js'
 import language from './lang/language'
 
 Vue.use(VueRouter);
