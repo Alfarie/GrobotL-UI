@@ -5,5 +5,8 @@ export default {
     pump: 'Pump',
     light: 'Light',
     mode: 'Mode',
-    status: 'Status'
+    status: 'Status',
+    selectch: 'Select CH.',
+    edittimer: 'Edit Timer',
+    addtimer: 'Add Timer'
 }

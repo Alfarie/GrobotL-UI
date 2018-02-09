@@ -3,7 +3,7 @@
 
     <div>
         <div class="col-md-10 col-md-offset-1" style="margin-top: -25px;">
-            <div class="grey-panel pn">
+            <router-link to="/timer/fan" tag="div" class="grey-panel pn">
                 <div style="display: inline">
                     <img src="../../assets/img/fan.png" style="width: 20%; height: 20%; margin: 10px;">
                 </div>
@@ -16,11 +16,12 @@
                         <span>: ON</span>
                     </h2>
                 </div>
-            </div>
+            </router-link>
+
         </div>
 
         <div class="col-md-10 col-md-offset-1" style="margin-top: 25px;">
-            <div class="grey-panel pn">
+            <router-link to="/timer/pump" tag="div" class="grey-panel pn">
                 <div style="display: inline">
                     <img src="../../assets/img/drops.png" style="width: 20%; height: 20%; margin: 10px;">
                 </div>
@@ -35,11 +36,11 @@
                         <span style="color: green">ON</span>
                     </h2>
                 </div>
-            </div>
+            </router-link>
         </div>
 
         <div class="col-md-10 col-md-offset-1" style="margin-top: 25px;">
-            <div class="grey-panel pn">
+            <router-link to="/timer/led" tag="div" class="grey-panel pn">
                 <div style="display: inline">
                     <img src="../../assets/img/light-bulb.png" style="width: 20%; height: 20%; margin: 10px;">
                 </div>
@@ -50,8 +51,10 @@
                     <h2>
                         <span v-lang.status></span>: ON</h2>
                 </div>
-            </div>
+            </router-link>
+
         </div>
+
     </div>
 </template>
 
@@ -65,11 +68,14 @@
                     { name: "Led", value: false }
                 ]
             };
+        },
+        methods: {
+            
         }
     };
 </script>
 
-<style>
+<style scoped>
     .grey-panel {
         /* text-align: center; */
         background: #e9e9eb;
@@ -78,6 +84,7 @@
 
     .grey-panel:hover {
         box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
     }
 
     .li-sensor-temp {

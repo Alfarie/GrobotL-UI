@@ -5,5 +5,8 @@ export default {
     pump: 'ปั้มน้ำ',
     light: 'แสงไฟ',
     mode: 'โหมด',
-    status: 'สถานะ'
+    status: 'สถานะ',
+    selectch: 'อุปกรณ์',
+    edittimer: 'แก้ไขเวลา',
+    addtimer: 'ตั้งเวลา'
 }

@@ -1,13 +1,57 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
       <div class="row">
-          <h1>this is Timer Component</h1>
+          <div class="col-xs-12 col-md-3">
+              <app-control-panel></app-control-panel>
+          </div>
+          <div class="col-md-8">
+              <router-view></router-view>
+          </div>
       </div>
   </div>
 </template>
 
 <script>
-    export default{
-        
-    }
+import ControlPanel from "./ControlPanel";
+import TimerPanel from "./TimerPanel/TimerPanel";
+
+export default {
+  components: {
+    appControlPanel: ControlPanel,
+    appTimerPanel: TimerPanel
+  }
+};
 </script>
+
+
+<style scoped>
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+.grey-panel {
+  /* text-align: center; */
+  background: #e9e9eb;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+.grey-panel:hover {
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.device-panel {
+  /* text-align: center; */
+  background: #e9e9eb;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+.device-panel:hover {
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.block {
+  display: inline-block;
+  vertical-align: top;
+}
+</style>
+
