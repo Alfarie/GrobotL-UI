@@ -90,7 +90,7 @@ body {
   animation: slide-out .5s ease-out forwards;
   transition: opacity .5s;
   opacity: 0;
-  /* position: absolute; */
+  position: absolute;
 }
 
 .slide-move {

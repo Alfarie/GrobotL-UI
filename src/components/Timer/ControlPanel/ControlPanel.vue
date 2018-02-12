@@ -1,7 +1,6 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <h1>{{isEdit}}</h1>
             <transition>
                 <div>
                     <div class="col-md-12 col-lg-12" style="margin-top: 20px;">
@@ -88,9 +87,6 @@ export default {
           path: '/timer/' + this.$route.params.id,
           query: {edit: true}
       };
-    },
-    isEdit(){
-        return (this.$route.query.edit)? true: false;
     }
   },
   methods: {

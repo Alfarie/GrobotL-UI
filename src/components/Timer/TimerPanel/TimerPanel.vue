@@ -12,9 +12,12 @@
       </div>  
     </div>
 
-    <div class="col-md-10 col-md-offset-2 test" v-for="(tl,ind) in timerList" :key="$route.params.id + ind">
-       <app-timer-box :data="tl"></app-timer-box>
-    </div>
+    <transition-group name="slide" mode="out-in">
+      <div class="col-md-10 col-md-offset-2 test" v-for="(tl,ind) in timerList" :key="$route.params.id + '-' +ind">
+        <app-timer-box :data="tl"></app-timer-box>
+      </div>
+    </transition-group>
+    
 
 
   </div>
@@ -37,6 +40,7 @@ export default {
   components: {
     appTimerBox: TimerBox
   },
+  
   created () {
     console.log('timer panel created');
   }
