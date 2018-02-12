@@ -26,6 +26,16 @@ export default {
 </script>
 
 <style>
+
+.grey-panel2 {
+        background: #e9e9eb;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.grey-panel2:hover {
+        box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
 body {
   padding: 30px;
   background-color: rgb(238, 238, 238);

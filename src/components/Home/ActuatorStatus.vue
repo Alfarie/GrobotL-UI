@@ -5,7 +5,7 @@
         <div class="col-md-10 col-md-offset-1" style="margin-top: -25px;">
             <router-link to="/timer/fan" tag="div" class="grey-panel pn">
                 <div style="display: inline">
-                    <img src="../../assets/img/fan.png" style="width: 20%; height: 20%; margin: 10px;">
+                    <img src="/src/assets/img/fan.png" style="width: 20%; height: 20%; margin: 10px;">
                 </div>
                 <div class="block" style="margin-left: 20px; width: 60%">
                     <h2 v-lang.fan></h2>
@@ -23,7 +23,7 @@
         <div class="col-md-10 col-md-offset-1" style="margin-top: 25px;">
             <router-link to="/timer/pump" tag="div" class="grey-panel pn">
                 <div style="display: inline">
-                    <img src="../../assets/img/drops.png" style="width: 20%; height: 20%; margin: 10px;">
+                    <img src="/src/assets/img/pump.png" style="width: 20%; height: 20%; margin: 10px;">
                 </div>
                 <div class="block" style="margin-left: 20px; width: 60%">
                     <h2 v-lang.pump></h2>
@@ -42,7 +42,7 @@
         <div class="col-md-10 col-md-offset-1" style="margin-top: 25px;">
             <router-link to="/timer/led" tag="div" class="grey-panel pn">
                 <div style="display: inline">
-                    <img src="../../assets/img/light-bulb.png" style="width: 20%; height: 20%; margin: 10px;">
+                    <img src="/src/assets/img/led.png" style="width: 20%; height: 20%; margin: 10px;">
                 </div>
                 <div class="block" style="margin-left: 20px; width: 60%">
                     <h2 v-lang.light></h2>

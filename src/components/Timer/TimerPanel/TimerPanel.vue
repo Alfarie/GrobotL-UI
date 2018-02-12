@@ -1,18 +1,18 @@
 <template>
   <div class="row text-center">
-    <!-- <h1>Timer Panel > Pump</h1> -->
+    
     <div class="col-md-10 col-md-offset-2">
       <div class="grey-panel">
           <div> 
             <div style="display: inline;">
-              <img src="../../../assets/img/schedule.png" style="height: 60px;">
+              <img src="/src/assets/img/schedule.png" style="height: 60px;">
             </div>
-              <span style="font-size: 30px;">TIMER LIST {{$route.params.id}}</span> 
+              <span style="font-size: 30px;">TIMER LIST {{$route.params.id | toUpperCase}}</span> 
           </div> 
       </div>  
     </div>
 
-    <div class="col-md-10 col-md-offset-2 test" v-for="(tl,ind) in list[$route.params.id]" :key="$route.params.id + ind">
+    <div class="col-md-10 col-md-offset-2 test" v-for="(tl,ind) in timerList" :key="$route.params.id + ind">
        <app-timer-box :data="tl"></app-timer-box>
     </div>
 
@@ -27,6 +27,11 @@ export default {
   data(){
     return {
       list: timerList
+    }
+  },
+  computed: {
+    timerList(){
+      return this.$store.getters.timerList[this.$route.params.id];
     }
   },
   components: {

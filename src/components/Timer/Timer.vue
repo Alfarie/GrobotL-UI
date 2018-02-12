@@ -5,20 +5,26 @@
               <app-control-panel></app-control-panel>
           </div>
           <div class="col-md-8">
+            <transition name="slide" mode="out-in">
               <router-view></router-view>
+            </transition>
+              
           </div>
       </div>
   </div>
 </template>
 
 <script>
-import ControlPanel from "./ControlPanel";
+import ControlPanel from "./ControlPanel/ControlPanel";
 import TimerPanel from "./TimerPanel/TimerPanel";
 
 export default {
   components: {
     appControlPanel: ControlPanel,
     appTimerPanel: TimerPanel
+  },
+  created(){
+    this.$store.dispatch('initList', []);
   }
 };
 </script>
