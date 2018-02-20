@@ -4,22 +4,24 @@
             <span class="timer-start-format">{{data.start | timeFormat}}</span> 
             <span style="text-align: center; margin: 40px; font-size: 30px;"> To</span>  
             <span class="timer-stop-format">{{data.stop  | timeFormat}}</span>
-            <transition name="fade">
+            <transition name="fade" mode="out-in">
                 <div class="pull-right" style="margin-top: 8px;" v-if="isEdit">
-                 <button type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-edit"></i></button>
-                <button type="button" class="btn btn-danger btn-circle btn-xl"><i class="fa fa-trash-alt"></i></button>
+                 <!-- <button type="button" class="btn btn-default btn-circle btn-xl" ><i class="fa fa-edit"></i></button> -->
+                <button type="button" class="btn btn-danger btn-circle btn-xl" @click="deleteIndex"><i class="fa fa-trash-alt"></i></button>
                 </div>
             </transition>
-            
         </div>
-        
   </div>
 </template>
 
-
 <script>
 export default {
-  props: ["data"],
+  props: ["data", "index"],
+  methods: {
+    deleteIndex(){
+        this.$store.dispatch('deleteIndexList', {type: this.$route.params.id, data: this.index});
+    }  
+  },
   computed: {
     isEdit() {
       return this.$route.query.edit ? true : false;

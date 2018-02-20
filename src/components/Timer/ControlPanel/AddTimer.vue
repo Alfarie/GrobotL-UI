@@ -13,13 +13,13 @@
           </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-lg-10 col-lg-offset-2" >
-          <div style="display: inline-block; margin: 50px;">
-              <h1>Start Time</h1>
+        <div class="col-xs-12 col-lg-10 col-lg-offset-2 text-center" >
+          <div style="display: inline-block; margin: 20px;">
+              <h1 class="pull-left">Start Time</h1>
               <app-time-picker id="start-time" place="Start Time" v-model="startTime"></app-time-picker>
           </div>  
-          <div style="display: inline-block; margin: 50px;">
-              <h1>Stop Time</h1>
+          <div style="display: inline-block; margin: 20px;">
+              <h1 class="pull-left">Stop Time</h1>
               <app-time-picker id="stop-time" place="Start Time" v-model="stopTime"></app-time-picker>
           </div>
         </div>

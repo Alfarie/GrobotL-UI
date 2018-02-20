@@ -1,9 +1,10 @@
 <template>
-  <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <img src="../../assets/img/lettuce.jpg" class="img-circle img-responsive" style="width: 85%;">
+  <div class="row outer">
+    <div class="inner">
+      <h1>Plant Activity</h1>
+      <img src="/src/assets/img/lettuce.jpg" class="img-circle img-responsive">
     </div>
-    <div style="display: inline-block;">
+    <div class="inner" >
         <div class="content-panel" style="width: 100%;">
           <table class="table">
             <thead>
@@ -15,15 +16,15 @@
             <tbody>
               <tr>
                 <td>Type: </td>
-                <td>Lettuce</td>
+                <td>{{activityFormat.type}}</td>
               </tr>
               <tr>
                 <td>DTH:</td>
-                <td> 43 days left</td>
+                <td> {{activityFormat.dth}} days left</td>
               </tr>
               <tr>
                 <td>Planting Date:</td>
-                <td>10 JAN</td>
+                <td>{{activityFormat.ptd}}</td>
               </tr>
               <tr>
                 <th></th>
@@ -33,23 +34,55 @@
           </table>
         </div>
       </div>
+      <div class="inner">
+        <router-link tag="button" class="btn btn-info btn-circle" to="/timer/fan"><i class="fa fa-sliders-h fa-3x"></i></router-link>
+        <router-link tag="button" class="btn btn-default btn-circle" to="/setting"><i class="fa fa-cogs fa-3x"></i></router-link>
+      </div>
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters(["activityFormat"])
+  },
+  created() {
+    console.log(this.activityFormat);
+  }
+};
 </script>
 
 
 <style scoped>
-  .block {
-    display: inline;
-  }
+.outer {
+  width: 100%;
+  text-align: center;
+}
 
-  .circle {
-    border-radius: 50%;
-  }
+.inner {
+  display: inline-block;
+  width: 50%;
+}
+.block {
+  display: inline;
+}
 
-  th,
-  td {
-    font-size: 23px;
-  }
+.circle {
+  border-radius: 50%;
+}
+
+th,
+td {
+  font-size: 23px;
+}
+
+.btn-circle {
+  width: 120px;
+  height: 120px;
+  padding: 6px 0px;
+  border-radius: 60px;
+  text-align: center;
+  line-height: 1.42857;
+  margin: 20px;
+}
 </style>

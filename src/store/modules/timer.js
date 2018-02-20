@@ -1,4 +1,6 @@
-import timerlist from '../../components/Timer/TimerPanel/timerlist.js'
+import timerlist from '../../components/Timer/TimerPanel/timerlist.js';
+import Vue from 'vue';
+
 const state = {
     timerList: []
 }
@@ -18,24 +20,48 @@ const mutations = {
         state.timerList[payload.type].push(payload.data);
     },
     deleteIndexList: (state,payload)=>{
-        state.timerList.splice(payload, 1);
+        state.timerList[payload.type].splice(payload.data, 1);
     }
 }
 
 const actions = {
     initList: ( {commit}, payload )=> {
-        console.log(timerlist);
-        payload = timerlist;
-        commit('updateList', payload);
+    Vue.http
+        .get("api/timers")
+        .then(
+            response => {
+                setTimeout( ()=> {
+                    commit('updateList', response.body);
+                }, 1000);
+            },
+            err => {
+                console.log(err);
+            }
+        );
     },
     updateList: ( {commit}, payload) => {
         commit('updateList', payload);
     },
     addList: ( {commit}, payload) =>{
-        commit('addList', payload);
+        console.log(payload);
+        setTimeout(()=>{
+            commit('addList', payload);
+            Vue.http.post('api/timers', { type: payload.type, data:state.timerList[payload.type]})
+                .then(
+                    res=>{
+                        console.log(res);
+                    },err=> {}
+                )
+        }, 1000);
     },
     deleteIndexList: ( {commit}, payload)=>{
         commit('deleteIndexList', payload);
+        Vue.http.post('api/timers', state.timerList)
+                .then(
+                    res=>{
+                        console.log(res);
+                    },err=> {}
+                )
     }
 }
 

@@ -5,10 +5,11 @@
               <app-control-panel></app-control-panel>
           </div>
           <div class="col-md-8">
-            <transition name="slide" mode="out-in">
+
+            <transition
+              name="fade" mode="out-in">
               <router-view></router-view>
             </transition>
-              
           </div>
       </div>
   </div>
@@ -17,20 +18,24 @@
 <script>
 import ControlPanel from "./ControlPanel/ControlPanel";
 import TimerPanel from "./TimerPanel/TimerPanel";
-
+var $ = (window.jQuery = require("jquery"));
+require("../../assets/css/animate.css");
 export default {
   components: {
     appControlPanel: ControlPanel,
     appTimerPanel: TimerPanel
   },
-  created(){
-    this.$store.dispatch('initList', []);
+  created() {
+    this.$store.dispatch('initList');
   }
 };
 </script>
 
 
 <style scoped>
+#timer-animate {
+  -vendor-animation-duration: 0.5s;
+}
 .vertical-center {
   display: flex;
   align-items: center;

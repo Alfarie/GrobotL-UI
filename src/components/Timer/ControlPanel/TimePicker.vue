@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input class="form-control timer" type="text" :id="id" :placeholder="place" :key="place">
+    <input class="form-control timer" type="text" :id="id" :placeholder="place" :key="place" size="15">
   </div>
 </template>
 

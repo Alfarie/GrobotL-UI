@@ -8,5 +8,5 @@ export default {
     status: 'Status',
     selectch: 'Select CH.',
     edittimer: 'Edit Timer',
-    addtimer: 'Add Timer'
+    addtimer: 'Add'
 }
