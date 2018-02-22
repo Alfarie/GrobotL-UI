@@ -10,10 +10,12 @@
                 <div class="block" style="margin-left: 20px; width: 60%">
                     <h2 v-lang.fan></h2>
                     <h2>
-                        <span v-lang.mode></span> : {{fanStatus.mode}}</h2>
+                        <span v-lang.mode></span> 
+                        <span :class="[{'auto': (actuator.fan.mode==1)?true:false},{'manual': (actuator.fan.mode==0)?true:false} ]">: {{getFan.mode}} </span>
+                    </h2>
                     <h2>
                         <span v-lang.status></span>
-                        <span>: {{fanStatus.status}}</span>
+                        <span :class="[{'on': (actuator.fan.status==1)?true:false},{'off': (actuator.fan.status==0)?true:false} ]">: {{getFan.status}}  </span>
                     </h2>
                 </div>
             </router-link>
@@ -27,18 +29,17 @@
                 </div>
                 <div class="block" style="margin-left: 20px; width: 60%">
                     <h2 v-lang.pump></h2>
-                    <h2>
-                        <span v-lang.mode></span> :
-                        <span style="color: orange;">{{pumpStatus.mode}}</span>
+                     <h2>
+                        <span v-lang.mode></span> 
+                        <span :class="[{'auto': (actuator.pump.mode==1)?true:false},{'manual': (actuator.pump.mode==0)?true:false} ]">: {{getPump.mode}} </span>
                     </h2>
                     <h2>
-                        <span v-lang.status></span>:
-                        <span style="color: green">{{pumpStatus.status}}</span>
+                        <span v-lang.status></span>
+                        <span :class="[{'on': (actuator.pump.status==1)?true:false},{'off': (actuator.pump.status==0)?true:false} ]">: {{getPump.status}}  </span>
                     </h2>
                 </div>
             </router-link>
         </div>
-
         <div class="col-md-10 col-md-offset-1" style="margin-top: 25px;">
             <router-link to="/timer/led" tag="div" class="grey-panel pn">
                 <div style="display: inline">
@@ -46,15 +47,18 @@
                 </div>
                 <div class="block" style="margin-left: 20px; width: 60%">
                     <h2 v-lang.light></h2>
+                     <h2>
+                        <span v-lang.mode></span> 
+                        <span :class="[{'auto': (actuator.pump.mode==1)?true:false},{'manual': (actuator.pump.mode==0)?true:false} ]">: {{getLed.mode}} </span>
+                    </h2>
                     <h2>
-                        <span v-lang.mode></span> : {{ledStatus.mode}}</h2>
-                    <h2>
-                        <span v-lang.status></span>: {{ledStatus.status}}</h2>
+                        <span v-lang.status></span>
+                        <span :class="[{'on': (actuator.pump.status==1)?true:false},{'off': (actuator.pump.status==0)?true:false} ]">: {{getLed.status}}  </span>
+                    </h2>
                 </div>
             </router-link>
 
         </div>
-
     </div>
 </template>
 
@@ -62,7 +66,25 @@
 import { mapGetters } from "vuex";
 export default {
   computed: {
-      ...mapGetters(['fanStatus', 'pumpStatus', 'ledStatus'])
+      ...mapGetters(['actuatorString', 'actuator']),
+      getFan(){
+          return {
+              mode: this.translate(this.actuatorString.fan.mode),
+              status: this.translate(this.actuatorString.fan.status)
+          }
+      },
+      getPump(){
+          return {
+              mode: this.translate(this.actuatorString.pump.mode),
+              status: this.translate(this.actuatorString.pump.status)
+          }
+      },
+      getLed(){
+          return {
+              mode: this.translate(this.actuatorString.led.mode),
+              status: this.translate(this.actuatorString.led.status)
+          }
+      },
   },
   created() {
     this.$socket.on("ACTUATOR", data => {
@@ -110,4 +132,20 @@ hr.vertical {
   height: 40px;
   /* or height in PX */
 }
+.on{
+    color: rgb(107, 233, 95);
+    font-weight: bolder;
+}
+.off{
+    color: rgb(224, 100, 100);
+    font-weight: bolder;
+}
+
+.auto{
+    color: rgb(52, 196, 253)
+}
+.manual{
+    color: rgb(250, 175, 35)
+}
+
 </style>

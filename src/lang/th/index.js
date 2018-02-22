@@ -8,5 +8,9 @@ export default {
     status: 'สถานะ',
     selectch: 'อุปกรณ์',
     edittimer: 'แก้ไขเวลา',
-    addtimer: 'ตั้งเวลา'
+    addtimer: 'ตั้งเวลา',
+    auto: 'อัตโนมัติ',
+    manual: 'ไม่ควบคุม',
+    on: 'เปิด',
+    off: 'ปิด',
 }

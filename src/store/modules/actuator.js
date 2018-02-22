@@ -15,26 +15,24 @@ const state = {
   }
 }
 
+import Vue from 'vue';
+
 
 const getters = {
-  fanStatus: state => {
+  actuatorString: state=>{
     let data = {
-      mode: (state.actuator.fan.mode == 0) ? 'MANUAL' : 'AUTO',
-      status: (state.actuator.fan.status == 0) ? 'OFF' : 'ON'
-    }
-    return data;
-  },
-  pumpStatus: state => {
-    let data = {
-      mode: (state.actuator.pump.mode == 0) ? 'MANUAL' : 'AUTO',
-      status: (state.actuator.pump.status == 0) ? 'OFF' : 'ON'
-    }
-    return data;
-  },
-  ledStatus: state => {
-    let data = {
-      mode: (state.actuator.led.mode == 0) ? 'MANUAL' : 'AUTO',
-      status: (state.actuator.led.status == 0) ? 'OFF' : 'ON'
+      fan: {
+        mode: (state.actuator.fan.mode == 0) ? 'manual' : 'auto',
+        status: (state.actuator.fan.status == 0) ? 'off' : 'on'
+      },
+      pump:{
+        mode: (state.actuator.pump.mode == 0) ? 'manual' : 'auto',
+        status: (state.actuator.pump.status == 0) ? 'off' : 'on'
+      },
+      led: {
+        mode: (state.actuator.led.mode == 0) ? 'manual' : 'auto',
+        status: (state.actuator.led.status == 0) ? 'off' : 'on'
+      }
     }
     return data;
   },
@@ -51,9 +49,25 @@ const mutations = {
 
 const actions = {
     updateActuator: ({commit} , payload)=>{
-        
+        // console.log(payload);
         commit('updateActuator',payload);
-    }
+    },
+    setMode: ({commit,state}, payload)=>{
+      state.actuator[payload.type].mode = payload.mode;
+      commit('updateActuator',state.actuator);
+      Vue.http.post('api/mode', { type: payload.type, mode: payload.mode});
+    },
+    setStatus: ({commit,state}, payload)=>{
+      state.actuator[payload.type].status = payload.status;
+      commit('updateActuator',state.actuator);
+      // console.log(payload);
+      Vue.http.post('api/status', 
+        { 
+          type: payload.type, 
+          status: (payload.status)? 1 : 0
+        }
+      );
+    },
 }
 
 export default {

@@ -3,14 +3,14 @@
     <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
     </div>
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-        <img src="../../assets/img/logo1.png" alt="" height="52" width="181">
+        <img src="/src/assets/img/logo1.png" alt="" height="52" width="181">
         <!-- <h2 style="font-size: 35px;"><b>Grobot-L 2.0</b> <small>{{language | upperCase}}</small></h2> -->
     </div>
     <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" style="margin-top: 20px; text-align: center;">
         
         <div class="pull-right">
            <app-date-time></app-date-time>
-            <img src="../../assets/img/connection.png" style="height: 60px;">
+            <img src="/src/assets/img/connection.png" style="height: 60px;">
             <span :class="[{online: connect}, {offline: !connect}]">{{isConnect}}...</span> 
         </div>
     </div>

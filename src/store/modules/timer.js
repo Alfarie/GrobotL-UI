@@ -56,7 +56,9 @@ const actions = {
     },
     deleteIndexList: ( {commit}, payload)=>{
         commit('deleteIndexList', payload);
-        Vue.http.post('api/timers', state.timerList)
+        console.log(state.timerList[payload.type]);
+
+        Vue.http.post('api/timers', { type: payload.type, data:state.timerList[payload.type]})
                 .then(
                     res=>{
                         console.log(res);

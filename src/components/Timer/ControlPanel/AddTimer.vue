@@ -2,15 +2,12 @@
     <div>
       <div class="row text-center">
           <div class="col-md-12">
-              <div class="grey-panel">
-                  <div> 
+              
                     <div style="display: inline;">
                       <img :src="imgLink" style="height: 80px;">
                     </div>
                       <span style="font-size: 30px;"> Add Timer - {{$route.params.id | toUpperCase}}</span> 
                   </div> 
-              </div>  
-          </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-lg-10 col-lg-offset-2 text-center" >
@@ -30,7 +27,6 @@
             <div  @click="addTimer" style="cursor: pointer;">
                <app-timer-box :data="timer"></app-timer-box>
             </div>
-            
         </div>
       </div>
 

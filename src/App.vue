@@ -43,12 +43,12 @@ body {
 
 @font-face {
   font-family: myFirstFont;
-  src: url('./assets/fonts/EkkamaiStandard-Light.ttf') format('truetype');;
+  src: url('/src/assets/fonts/EkkamaiStandard-Light.ttf') format('truetype');;
 }
 
 @font-face {
   font-family: myFirstFont;
-  src: url('./assets/fonts/EkkamaiStandard-Light.ttf') format('truetype');;
+  src: url('/src/assets/fonts/EkkamaiStandard-Light.ttf') format('truetype');;
   font-weight: bold;
 }
 

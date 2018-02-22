@@ -1,3 +1,4 @@
+import Vue from 'vue'
 const state = {
     date: '',
     time: ''
@@ -21,8 +22,15 @@ const mutations = {
     }
 }
 
+const actions = {
+    updateDateTime({commit}, payload){
+        Vue.http.post('api/datetimes', payload);
+    }
+}
+
 export default {
     state,
     getters,
-    mutations
+    mutations,
+    actions
 }

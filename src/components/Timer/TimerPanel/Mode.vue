@@ -30,23 +30,15 @@
         </div>
 
         
-          <div class="inner" v-if="getStatus" key="onmanual" >
-            <div style="margin-top: 10px;" class="grey-panel pn" :class="{'opacity-passive': !getStatus}" @click="changeStatus(1)">
+          <div class="inner" v-if="!getMode" key="onmanual" >
+            <div style="margin-top: 10px;" class="grey-panel pn" @click="changeStatus(1)">
               <div style="display: inline">
-                <img src="/src/assets/img/status_on.png" style="width: 80px; margin: 10px;">
+                <img src="/src/assets/img/status_on.png" style="width: 80px; margin: 10px;" v-if="getStatus">
+                <img src="/src/assets/img/status_off.png" style="width: 80px; margin: 10px;" v-else>
               </div>
               <div class="block" style="margin: 20px;">
-                <h2>ON</h2>
-              </div>
-            </div>
-          </div>
-          <div class="inner" v-if="!getStatus" key="offmanual" >
-            <div style="margin-top: 10px;" class="grey-panel pn" :class="{'opacity-passive': getStatus}" @click="changeStatus(0)">
-              <div style="display: inline">
-                <img src="/src/assets/img/status_off.png" style="width: 80px; margin: 10px;">
-              </div>
-              <div class="block" style="margin: 20px;">
-                <h2>OFF</h2>
+                <h2 v-if="getStatus">ON</h2>
+                <h2 v-else>OFF</h2>
               </div>
             </div>
           </div>
@@ -76,21 +68,17 @@ export default {
   methods: {
     changeMode(val) {
       var data = {
-        mode: val,
-        status: 0
-      };
-      let act = this.actuator;
-      act[this.$route.params.id] = data;
-      this.$store.dispatch("updateActuator", act);
+        type: this.$route.params.id,
+        mode: val
+      }
+      this.$store.dispatch("setMode", data);
     },
-    changeStatus(val) {
+    changeStatus() {
       var data = {
-        mode: 0,
+        type: this.$route.params.id,
         status: !this.getStatus
-      };
-      let act = this.actuator;
-      act[this.$route.params.id] = data;
-      this.$store.dispatch("updateActuator", act);
+      }
+      this.$store.dispatch('setStatus', data);
     }
   }
 };

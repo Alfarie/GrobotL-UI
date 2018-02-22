@@ -1,14 +1,12 @@
 <template>
   <div class="row text-center">
     <div class="col-md-10 col-md-offset-2">
-      <div class="grey-panel">
           <div> 
             <div style="display: inline;">
-              <img src="/src/assets/img/schedule.png" style="height: 60px;">
+              <img :src="imgLink" style="height: 60px;">
             </div>
               <span style="font-size: 30px;">TIMER LIST {{$route.params.id | toUpperCase}}</span> 
           </div> 
-      </div>  
     </div>
 
     <transition-group name="slide">
@@ -36,6 +34,9 @@ export default {
   computed: {
     timerList() {
       return this.$store.getters.timerList[this.$route.params.id];
+    },
+    imgLink(){
+      return '/src/assets/img/' + this.$route.params.id + '.png'
     }
   },
   components: {
