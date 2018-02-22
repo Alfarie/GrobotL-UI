@@ -49,11 +49,11 @@
                     <h2 v-lang.light></h2>
                      <h2>
                         <span v-lang.mode></span> 
-                        <span :class="[{'auto': (actuator.pump.mode==1)?true:false},{'manual': (actuator.pump.mode==0)?true:false} ]">: {{getLed.mode}} </span>
+                        <span :class="[{'auto': (actuator.led.mode==1)?true:false},{'manual': (actuator.led.mode==0)?true:false} ]">: {{getLed.mode}} </span>
                     </h2>
                     <h2>
                         <span v-lang.status></span>
-                        <span :class="[{'on': (actuator.pump.status==1)?true:false},{'off': (actuator.pump.status==0)?true:false} ]">: {{getLed.status}}  </span>
+                        <span :class="[{'on': (actuator.led.status==1)?true:false},{'off': (actuator.led.status==0)?true:false} ]">: {{getLed.status}}  </span>
                     </h2>
                 </div>
             </router-link>

@@ -13,8 +13,10 @@ import "./filters/filters.js";
 Vue.use(VueRouter);
 Vue.use(MultiLanguage, language)
 Vue.use(VueResource);
-Vue.use(VueSocketio, socketio('http://localhost:3000'), store);
-Vue.http.options.root = 'http://localhost:3000';
+
+var hostname = window.location.hostname;
+Vue.use(VueSocketio, socketio('http://'+ hostname +':3000'), store);
+Vue.http.options.root = 'http://'+ hostname +':3000';
 
 const router = new VueRouter({
   mode: 'history',
