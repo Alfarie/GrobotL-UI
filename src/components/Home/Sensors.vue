@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-sm-12 col-md-4 col-md-offset-2 mycontent-left"  >
+        <div class="col-sm-12 col-md-5 col-md-offset-1 mycontent-left"  >
             <div class="block">
                 <li class="fa fa-thermometer-half fa-9x li-sensor-temp"></li>
                 <div class="block" style="margin-left: 20px;">
