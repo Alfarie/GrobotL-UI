@@ -13,7 +13,7 @@
 </template>
 
 <script>
-// style="background-color: rgb(238, 238, 238);"
+//  style="background-color: rgb(238, 238, 238);"
 export default {
   computed: {
     flag() {

@@ -21,6 +21,7 @@ export default {
     mode: 'Mode',
     deletetimer: 'Delete',
     backtohome: 'Back to home',
-    setdatetime: 'date & time'
+    setdatetime: 'Date & Time',
+    setactivity: 'Activity'
     
 }

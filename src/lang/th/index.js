@@ -21,5 +21,6 @@ export default {
     addtimer: 'เพิ่มเวลา',
     deletetimer: 'ลบเวลา',
     backtohome: 'กลับหน้าหลัก',
-    setdatetime: 'ตั้งวันเวลา'
+    setdatetime: 'ตั้งวันเวลา',
+    setactivity: 'สถานะปลูก'
 }

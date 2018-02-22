@@ -21,7 +21,7 @@
                 <img src="/src/assets/img/leaf.png" style="width: 80px; margin: 10px;">
               </div>
               <div class="block" style="margin: 20px;">
-                <h2 v-lang.activity></h2>
+                <h2 v-lang.setactivity></h2>
               </div>
             </div>
           </router-link>

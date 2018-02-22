@@ -10,16 +10,17 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-lg-12 text-center">
-        <div style="display: inline-block; margin: 20px;">
+
+        <div style="display: block; margin: 20px;">
           <h1>Date</h1>
-
-          <input type="date" name="" id="setdate" class="form-control timer" value="" required="required" title="">
-
+          <input type="date" name="" id="setdate" class="form-control timer text-center" style="width: 50%">
         </div>
-        <div style="display: inline-block; margin: 20px;">
+
+        <div style="display: block; margin: 20px;">
           <h1>Time</h1>
-          <input type="text" class="form-control timer" name="" id="settime">
+          <input type="text" class="form-control timer text-center" name="" id="settime" style="width: 50%">
         </div>
+
       </div>
     </div>
     <transition name="fade" mode="out-in">
@@ -104,6 +105,7 @@
 </script>
 
 <style scoped>
+ 
   .outer {
     width: 100%;
     text-align: center;
