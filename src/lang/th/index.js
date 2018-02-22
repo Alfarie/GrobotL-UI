@@ -13,4 +13,13 @@ export default {
     manual: 'ไม่ควบคุม',
     on: 'เปิด',
     off: 'ปิด',
+    activity: 'สถานะปลูก',
+    type: 'ชนิดพืช:',
+    dth: 'เก็บเกี่ยว:',
+    ptd: 'วันที่ปลูก:',
+    mode: 'โหมด',
+    addtimer: 'เพิ่มเวลา',
+    deletetimer: 'ลบเวลา',
+    backtohome: 'กลับหน้าหลัก',
+    setdatetime: 'ตั้งวันเวลา'
 }

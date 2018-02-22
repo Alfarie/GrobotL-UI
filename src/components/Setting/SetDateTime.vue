@@ -103,7 +103,7 @@
 
 </script>
 
-<style>
+<style scoped>
   .outer {
     width: 100%;
     text-align: center;

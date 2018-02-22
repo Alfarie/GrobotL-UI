@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid" style="margin-bottom: 20px; margin-top: 10px;">
+<div class="container-fluid" style="margin-bottom: 20px;">
     <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
     </div>
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -10,7 +10,7 @@
         
         <div class="pull-right">
            <app-date-time></app-date-time>
-            <img src="/src/assets/img/connection.png" style="height: 60px;">
+            <img src="/src/assets/img/connection.png" style="height: 40px;">
             <span :class="[{online: connect}, {offline: !connect}]">{{isConnect}}...</span> 
         </div>
     </div>

@@ -36,7 +36,7 @@
                 <img src="/src/assets/img/mode.png" style="width: 80px; margin: 10px;">
               </div>
               <div class="block" style="margin: 20px;">
-                <h2>Mode</h2>
+                <h2 v-lang.mode></h2>
               </div>
             </router-link>
             <router-link :to="linkAddTimer" tag="div" style="margin-top: 10px;" class="grey-panel pn opacity-passive" active-class="opacity-active">
@@ -52,7 +52,7 @@
                 <img src="/src/assets/img/error.png" style="width: 80px; margin: 10px;">
               </div>
               <div class="block" style="margin: 20px;">
-                <h2>Delete</h2>
+                <h2 v-lang.deletetimer></h2>
               </div>
             </router-link>
           </div>
@@ -61,7 +61,7 @@
             <div class="grey-panel pn">
               <div class="block" style="margin: 20px;">
                 <h2>
-                  <i class="fa fa-chevron-left"></i> กลับหน้าหลัก</h2>
+                  <i class="fa fa-chevron-left"></i> <span v-lang.backtohome></span></h2>
               </div>
             </div>
           </div>

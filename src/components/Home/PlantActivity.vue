@@ -1,7 +1,7 @@
 <template>
   <div class="row outer">
     <div class="inner">
-      <h1>Plant Activity</h1>
+      <h1 v-lang.activity></h1>
       <img src="/src/assets/img/lettuce.jpg" class="img-circle img-responsive">
     </div>
     <div class="inner" >
@@ -15,15 +15,15 @@
             </thead>
             <tbody>
               <tr>
-                <td>Type: </td>
+                <td v-lang.type> </td>
                 <td>{{activityFormat.type}}</td>
               </tr>
               <tr>
-                <td>DTH:</td>
+                <td v-lang.dth></td>
                 <td> {{activityFormat.dth}} days left</td>
               </tr>
               <tr>
-                <td>Planting Date:</td>
+                <td v-lang.ptd></td>
                 <td>{{activityFormat.ptd}}</td>
               </tr>
               <tr>

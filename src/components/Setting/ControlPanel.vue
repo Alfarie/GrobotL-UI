@@ -10,7 +10,7 @@
                 <img src="/src/assets/img/setclock.png" style="width: 80px; margin: 10px;">
               </div>
               <div class="block" style="margin: 20px;">
-                <h2>ตั้งนาฬิกา</h2>
+                <h2 v-lang.setdatetime></h2>
               </div>
             </div>
           </router-link>
@@ -21,7 +21,7 @@
                 <img src="/src/assets/img/leaf.png" style="width: 80px; margin: 10px;">
               </div>
               <div class="block" style="margin: 20px;">
-                <h2>Activity</h2>
+                <h2 v-lang.activity></h2>
               </div>
             </div>
           </router-link>

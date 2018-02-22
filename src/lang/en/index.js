@@ -13,5 +13,14 @@ export default {
     manual: 'Manual',
     on: 'ON',
     off: 'OFF',
+    activity: 'Plant Activity',
+    type: 'Type:',
+    dth: 'DTH:',
+    ptd: 'Planting date:',
+
+    mode: 'Mode',
+    deletetimer: 'Delete',
+    backtohome: 'Back to home',
+    setdatetime: 'date & time'
     
 }
